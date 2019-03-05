@@ -118,7 +118,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
         }
         else { //NOT CATEGORY - Must be item that links directly to a synopsis
-            
+            cell.setupViews(asCategory: false, withImageRatio: 1, cellType: "rugby_layout")
             if collectionView.tag == 1 {
                 switch indexPath.row {
                 case 0:
@@ -141,6 +141,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
             else {
+                cell.setupViews(asCategory: false, withImageRatio: 1, cellType: "football_layout")
+                
                 switch indexPath.row {
                 case 0:
                     cell.titleLabel.text = "Liverpool"
@@ -162,7 +164,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
 
-            cell.setupViews(asCategory: false, withImageRatio: 1, cellType: "rugby_layout")
+            
             
             return cell
         }
